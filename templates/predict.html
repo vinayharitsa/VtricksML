@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RESULTS</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/my_style.css') }}">
+</head>
+<body>
+
+	<header>
+		<div class="container">
+		<div id="brandname">
+			<h1 style="color: #922B21">Heart Disease Recognition<h1>
+		</div>
+		
+	</div>
+	</header>
+	<p style="color:blue;font-size:20;text-align: center;"><b>Predictions</b></p>
+	<div class="results">
+
+
+    </div>
+
+		
+	{% if prediction == 1%}
+	<h2 style="width: 100%; background-color: #922B21 ;color: white">Accoring to the data! YOU MIGHT HAVE A HEART DISEASE</h2>
+	<img  src="https://i0.wp.com/cdn-prod.medicalnewstoday.com/content/images/articles/314/314182/black-and-red-heart-illustration.jpg?w=1155&h=1470"class="center">
+	{% elif prediction == 0%}
+	<h2 style="width: 100%; text-align: center; background-color: #922B21 ;color: white">Accoring to the data! YOU MIGHT NOT HAVE A HEART DISEASE</h2>
+	<img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR9gWkFS5ClzBbIRvrTXUMtNPAJrxSgHbqTW-mNij5ufppT1tlF&usqp=CAU" class="center">
+	{% endif %}
+
+	</div>
+<style>
+	.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 40%;
+  width: 40%;
+}
+</style>
+</body>
+</html>

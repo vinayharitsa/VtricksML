@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>HeartApp</title>
+	<meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  
+  <!-- Bootstrap css -->
+  <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='lib/bootstrap/css/bootstrap.min.css') }}">
+
+
+  <!-- Libraries CSS Files -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.carousel.min.css') }}">
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='lib/owlcarousel/assets/owl.theme.default.min.css') }}">
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='lib/font-awesome/css/font-awesome.min.css') }}">
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='lib/animate/animate.min.css') }}">
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='lib/modal-video/css/modal-video.min.css') }}">
+
+  <!-- Main Stylesheet File -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+
+  <!-- =======================================================
+    Theme Name: eStartup
+    Theme URL: https://bootstrapmade.com/estartup-bootstrap-landing-page-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+    ======================================================= -->
+  </head>
+</head>
+<body>
+
+	    <header id="header" class="header header-hide">
+      <div class="container">
+
+        <div id="logo" class="pull-left">
+          <h1 style="color: #922B21">Heart Diseas Prediction System</h1>
+          <!-- Uncomment below if you prefer to use an image logo -->
+          <!-- <a href="#body"><img src="img/logo.png" alt="" title="" /></a>-->
+        </div>
+
+      </div>
+    </header>
+
+    ===========-->
+    <section id="contact" class="padd-section wow fadeInUp">
+     <div style="background-color: #922B21">
+      <div class="container">
+        <h2  style="color: white">HEART DESEASE PREDICTION</h2>
+      </div>
+
+    </div>
+    <br><br>
+
+    <div class="container">
+      <div class="row justify-content-center">
+
+
+        <div class="col-lg-10 col-md-10 card">
+          <h3 style="text-align: center; background-color: ; color: white">CHECK YOUR HEART DESEASE</h3>
+          <br>
+          <div class="form">
+<h1> Heart Disease prediction</h1>
+<form action="{{ url_for('predict')}}" method="POST">
+              <div class="row">
+
+
+                <div class = "col-sm-6">
+                  <label for="name">Name</label>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Your name..">
+                </div>
+
+                <div class = "col-sm-6">
+                  <label for="age">Age</label>
+                  <input type="text" class="form-control" id="age" name="age" placeholder="Your age..">
+                </div>
+
+                <div class = "col-sm-6">
+                  <label for="sex">Sex</label>
+                  <select id="sex" name="sex" class="form-control">
+                    <option value="1">Male</option>
+                    <option value="0">Female</option>
+                  </select>
+                </div>
+
+                <div class = "col-sm-6">
+                  <label for="cp">Chest Pain Type</label>
+                  <select id="cp" name="cp" class="form-control">
+                    <option value="1">Typical Angina</option>
+                    <option value="2">Atypical Angina</option>
+                    <option value="3">Non-anginal Pain</option>
+                    <option value="4">Asymtomatic</option>
+                  </select>
+                </div>
+
+                <div class = "col-sm-6">
+                  <label for="trestbps">Resting Blood Pressure</label>
+                  <input type="text" class="form-control" id="trestbps" name="trestbps" placeholder="A number in range [94, 200]">
+                </div>
+
+                <div class = "col-sm-6">
+                  <label for="chol">Serum Cholestrol</label>
+                  <input type="text" class="form-control" id="chol" name="chol" placeholder="A number in range [126, 564]">
+                </div>
+
+                <div class = "col-sm-6">
+                  <label for="fbs">Fasting Blood Sugar</label>
+                  <select id="fbs" name="fbs" class="form-control">
+                    <option value="1">Greater than 120 mg/dl</option>
+                    <option value="0">Less than 120 mg/dl</option>
+                  </select>
+                </div>
+
+                <div class = "col-sm-6">
+                  <label for="restecg">Resting ECG Results</label>
+                  <select id="restecg" name="restecg" class="form-control">
+                    <option value="0">Normal</option>
+                    <option value="1">Having ST-T wave abnormality</option>
+                  </select>
+                </div>
+
+                <div class = "col-sm-6">
+                  <label for="thalach">Max Heart Rate Achieved</label>
+                  <input type="text" class="form-control" id="thalach" name="thalach" placeholder="A number in range [71, 202]">
+                </div>
+
+                <div class = "col-sm-6">
+                  <label for="exang">Exercise-induced Angina</label>
+                  <select id="exang" name="exang" class="form-control">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                  </select>
+                </div>
+
+                <div class = "col-sm-6">
+                  <label for="oldpeak">ST depression induced by exercise relative to rest</label>
+                  <input type="text" class="form-control" id="oldpeak" name="oldpeak" placeholder="ST depression, typically in [0, 6.2]">
+                </div>
+
+                <div class = "col-sm-6">
+                  <label for="slope">Slope of the peak exercise ST segment</label>
+                  <input type="text" class="form-control" id="slope" name="slope" placeholder="Typically in [1, 3]">
+                </div>
+
+                <div class = "col-sm-6">
+                  <label for="ca">Number of Major vessels</label>
+                  <input type="text" class="form-control" id="ca" name="ca" placeholder="Typically in [0, 3]">
+                </div>
+
+                <div class = "col-sm-6">
+                  <label for="thal">thal</label>
+                  <select id="thal" name="thal" class="form-control">
+                    <option value="3">Normal</option>
+                    <option value="6">Fixed Defect</option>
+                    <option value="7">Reversible Defect</option>
+                  </select>
+                </div>
+              </div>
+              <br>
+              <div class="text-center"><input type="submit" value="CHECK AND SHOW RESULT" style="width: 100%; background-color: #922B21 ;color: white"></div>
+
+            </form>
+
+         </div>
+        </div>
+      </div>
+
+
+    </div>
+
+  </section>
+
+</body>
+</html>
